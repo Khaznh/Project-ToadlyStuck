@@ -118,6 +118,15 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Hold"",
+                    ""type"": ""Button"",
+                    ""id"": ""6519e5f4-b80e-4fb4-ac32-a00a23ce28af"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -206,6 +215,28 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Click"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""48d88e91-d83c-426d-b13c-3d78b0bbd17e"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hold"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9b646234-d9c2-4f38-b5f6-5c14066de830"",
+                    ""path"": ""<Touchscreen>/Press"",
+                    ""interactions"": ""Hold"",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Hold"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -342,6 +373,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         m_NorPlayer_Move = m_NorPlayer.FindAction("Move", throwIfNotFound: true);
         m_NorPlayer_Jump = m_NorPlayer.FindAction("Jump", throwIfNotFound: true);
         m_NorPlayer_Click = m_NorPlayer.FindAction("Click", throwIfNotFound: true);
+        m_NorPlayer_Hold = m_NorPlayer.FindAction("Hold", throwIfNotFound: true);
         // ShamblePlayer
         m_ShamblePlayer = asset.FindActionMap("ShamblePlayer", throwIfNotFound: true);
         m_ShamblePlayer_Click = m_ShamblePlayer.FindAction("Click", throwIfNotFound: true);
@@ -431,6 +463,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
     private readonly InputAction m_NorPlayer_Move;
     private readonly InputAction m_NorPlayer_Jump;
     private readonly InputAction m_NorPlayer_Click;
+    private readonly InputAction m_NorPlayer_Hold;
     /// <summary>
     /// Provides access to input actions defined in input action map "NorPlayer".
     /// </summary>
@@ -454,6 +487,10 @@ public partial class @Input: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "NorPlayer/Click".
         /// </summary>
         public InputAction @Click => m_Wrapper.m_NorPlayer_Click;
+        /// <summary>
+        /// Provides access to the underlying input action "NorPlayer/Hold".
+        /// </summary>
+        public InputAction @Hold => m_Wrapper.m_NorPlayer_Hold;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -489,6 +526,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @Click.started += instance.OnClick;
             @Click.performed += instance.OnClick;
             @Click.canceled += instance.OnClick;
+            @Hold.started += instance.OnHold;
+            @Hold.performed += instance.OnHold;
+            @Hold.canceled += instance.OnHold;
         }
 
         /// <summary>
@@ -509,6 +549,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @Click.started -= instance.OnClick;
             @Click.performed -= instance.OnClick;
             @Click.canceled -= instance.OnClick;
+            @Hold.started -= instance.OnHold;
+            @Hold.performed -= instance.OnHold;
+            @Hold.canceled -= instance.OnHold;
         }
 
         /// <summary>
@@ -688,6 +731,13 @@ public partial class @Input: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnClick(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Hold" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnHold(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "ShamblePlayer" which allows adding and removing callbacks.

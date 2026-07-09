@@ -21,7 +21,7 @@ public class SpawnLevelManager : Singleton<SpawnLevelManager>
         SpawnInit();
     }
 
-    // do not start as level 3
+    // do not start as level 3,8
     private void SpawnInit()
     {
         currentLevel = LevelChooseData.Instance.levelIndex;

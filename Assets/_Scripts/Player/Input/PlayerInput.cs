@@ -7,6 +7,7 @@ public class PlayerInput : MonoBehaviour
 {
     public Action OnJumpClicked;
     public Action<GameObject> OnClickedOn;
+    public Action OnHoldOn;
 
     public Vector2 moveVector;
     public bool isShambles = false;
@@ -17,8 +18,14 @@ public class PlayerInput : MonoBehaviour
     {
         playerInputAction = new Input();
         playerInputAction.Enable();
-        playerInputAction.NorPlayer.Jump.performed += OnJumpPerformed;
+
+        playerInputAction.NorPlayer.Jump.performed += OnNorJumpPerformed;
         playerInputAction.NorPlayer.Click.performed += OnClick;
+
+        //playerInputAction.NorPlayer.Hold.started += OnHoldPerform;
+        //playerInputAction.NorPlayer.Hold.performed += OnHoldPerform;
+
+        playerInputAction.ShamblePlayer.Jump.performed += OnShambleJumpPerformed;
     }
 
     private void OnDisable()
@@ -27,12 +34,33 @@ public class PlayerInput : MonoBehaviour
     }
 
     private void Update()
-    {
-        moveVector = playerInputAction.NorPlayer.Move.ReadValue<Vector2>();
+    { 
+        if (isShambles)
+        {
+            moveVector = playerInputAction.ShamblePlayer.Move.ReadValue<Vector2>();
+        } else
+        {
+            moveVector = playerInputAction.NorPlayer.Move.ReadValue<Vector2>();
+        }
     }
 
-    private void OnJumpPerformed(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    private void OnNorJumpPerformed(UnityEngine.InputSystem.InputAction.CallbackContext context)
     {
+        if (isShambles)
+        {
+            return;
+        }
+
+        OnJumpClicked?.Invoke();
+    }
+
+    private void OnShambleJumpPerformed(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        if (!isShambles)
+        {
+            return;
+        }
+
         OnJumpClicked?.Invoke();
     }
 
@@ -49,5 +77,10 @@ public class PlayerInput : MonoBehaviour
 
             OnClickedOn?.Invoke(clickedObject);
         }
+    }
+
+    private void OnHoldPerform(UnityEngine.InputSystem.InputAction.CallbackContext context)
+    {
+        
     }
 }

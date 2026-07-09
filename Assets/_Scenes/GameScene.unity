@@ -654,6 +654,7 @@ MonoBehaviour:
   - {fileID: 488541373382065307, guid: e1e016c339f412c4097b95b66e102f70, type: 3}
   - {fileID: 5745553704691599426, guid: 35ca6bb3e5412fb49ab0cc66e51f31ec, type: 3}
   - {fileID: 8484525008134182878, guid: edaf87bfe0ab46642913c0d3e78bc945, type: 3}
+  - {fileID: 4396999913863108647, guid: 3d70929146e3a854ea6b10dcaa4c4ac9, type: 3}
   player: {fileID: 658438172469069521, guid: 2afc8e58ca6f5f443bb83e204b2517dd, type: 3}
   currentLevelGameObject: {fileID: 0}
   lastLevelGameObject: {fileID: 0}
