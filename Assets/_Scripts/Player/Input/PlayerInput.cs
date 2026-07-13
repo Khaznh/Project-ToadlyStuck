@@ -22,9 +22,6 @@ public class PlayerInput : MonoBehaviour
         playerInputAction.NorPlayer.Jump.performed += OnNorJumpPerformed;
         playerInputAction.NorPlayer.Click.performed += OnClick;
 
-        //playerInputAction.NorPlayer.Hold.started += OnHoldPerform;
-        //playerInputAction.NorPlayer.Hold.performed += OnHoldPerform;
-
         playerInputAction.ShamblePlayer.Jump.performed += OnShambleJumpPerformed;
     }
 
@@ -77,10 +74,5 @@ public class PlayerInput : MonoBehaviour
 
             OnClickedOn?.Invoke(clickedObject);
         }
-    }
-
-    private void OnHoldPerform(UnityEngine.InputSystem.InputAction.CallbackContext context)
-    {
-        
     }
 }

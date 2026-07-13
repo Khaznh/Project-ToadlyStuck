@@ -16,6 +16,8 @@ public class SpawnLevelManager : Singleton<SpawnLevelManager>
     public int currentX = 0;
     private int currentLevel = 0;
 
+    public bool isSpawning = false;
+
     private void Start()
     {
         SpawnInit();
@@ -32,6 +34,9 @@ public class SpawnLevelManager : Singleton<SpawnLevelManager>
 
     public void SpawnNextLevel()
     {
+        if (isSpawning) return;
+        isSpawning = true;
+
         currentLevel++;
         lastLevelGameObject = currentLevelGameObject;
         currentX = currentX + LEVEL_LENGTH;
@@ -42,6 +47,9 @@ public class SpawnLevelManager : Singleton<SpawnLevelManager>
 
     public void SpawnPreviousLevel()
     {
+        if (isSpawning) return;
+        isSpawning = true;
+
         currentLevel--;
         lastLevelGameObject = currentLevelGameObject;
         currentX = currentX - LEVEL_LENGTH;
@@ -53,6 +61,7 @@ public class SpawnLevelManager : Singleton<SpawnLevelManager>
     public void SetUp()
     {
         DestroyLastLevel();
+        isSpawning = false;
     }
 
     private void TelePlayer()
