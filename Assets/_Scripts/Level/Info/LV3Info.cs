@@ -5,12 +5,12 @@ public class LV3Info : LVInfo
 {
     private void OnEnable()
     {
-        PlayerController.Instance.playerInput.OnClickedOn += PressOnButton;
+        PlayerController.Instance.playerInput.OnClickedOnGO += PressOnButton;
     }
 
     private void OnDisable()
     {
-        PlayerController.Instance.playerInput.OnClickedOn -= PressOnButton;
+        PlayerController.Instance.playerInput.OnClickedOnGO -= PressOnButton;
     }
 
     public void OnPlayerNextLevel(Collider2D collision, Activer activer)
