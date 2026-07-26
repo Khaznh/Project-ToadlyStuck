@@ -6,8 +6,9 @@ using UnityEngine.Rendering.Universal;
 public class PlayerInput : MonoBehaviour
 {
     public Action OnJumpClicked;
-    public Action<GameObject> OnClickedOn;
-    public Action OnHoldOn;
+
+    public Action<GameObject> OnClickedOnGO;
+    public Action<Vector2> OnClickedPos;
 
     public Vector2 moveVector;
     public bool isShambles = false;
@@ -66,13 +67,15 @@ public class PlayerInput : MonoBehaviour
         Vector2 screenPosition = Pointer.current.position.ReadValue();
         Vector2 worldPosition = Camera.main.ScreenToWorldPoint(screenPosition);
 
+        OnClickedPos?.Invoke(worldPosition);
+
         RaycastHit2D hit = Physics2D.Raycast(worldPosition, Vector2.zero);
 
         if (hit.collider != null)
         {
             GameObject clickedObject = hit.collider.gameObject;
 
-            OnClickedOn?.Invoke(clickedObject);
+            OnClickedOnGO?.Invoke(clickedObject);
         }
     }
 }
