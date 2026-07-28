@@ -8,6 +8,10 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private bool isTouchingGround = true;
 
+    [Header("LV11 stats")]
+    public bool isInWind = false;
+    [SerializeField] private float windForce = 2.0f;
+
     private PlayerInput input;
     private Rigidbody2D rb;
 
@@ -39,7 +43,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleMovement(Vector2 moveVector)
     {
-        rb.linearVelocity = new Vector2(moveVector.x * moveSpeed, rb.linearVelocity.y);
+        if (!isInWind)
+        {
+            rb.linearVelocity = new Vector2(moveVector.x * moveSpeed, rb.linearVelocity.y);
+        } else
+        {
+            rb.linearVelocity = new Vector2(moveVector.x * moveSpeed - windForce, rb.linearVelocity.y);
+        }
     }
 
     private void HandleFacing()
