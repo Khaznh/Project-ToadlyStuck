@@ -5,6 +5,7 @@ public class LV3Info : LVInfo
 {
     private void OnEnable()
     {
+        PlayerPrefs.SetInt("LastLevelPlayed", 3);
         PlayerController.Instance.playerInput.OnClickedOnGO += PressOnButton;
     }
 

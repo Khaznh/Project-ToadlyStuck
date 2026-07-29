@@ -4,6 +4,7 @@ public class LV16Info : LVInfo
 {
     public void OnEnable()
     {
+        PlayerPrefs.SetInt("LastLevelPlayed", 16);
         PlayerController.Instance.SetPlayerGravityScale(0.2f);
     }
 

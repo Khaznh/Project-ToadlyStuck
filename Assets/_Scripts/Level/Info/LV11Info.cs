@@ -4,6 +4,7 @@ public class LV11Info : LVInfo
 {
     public void OnEnable()
     {
+        PlayerPrefs.SetInt("LastLevelPlayed", 11);
         PlayerController.Instance.playerMovement.isInWind = true;
     }
 

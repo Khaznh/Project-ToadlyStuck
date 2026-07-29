@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class LV13Info : LVInfo
 {
+    public void OnEnable()
+    {
+        PlayerPrefs.SetInt("LastLevelPlayed", 13);
+    }
+
     public void OnPlayerSpike(Collider2D collision, Activer activer)
     {
         if (!collision.gameObject.CompareTag("Player"))
