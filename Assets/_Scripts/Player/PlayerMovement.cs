@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("LV15 stats")]
     public bool isBlockJump = false;
 
+    [Header("LV17 stats")]
+    public bool isReverseByGravity = false;
+
     private PlayerInput input;
     private Rigidbody2D rb;
 
@@ -60,17 +63,25 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleFacing()
     {
+        Vector3 currentScale = PlayerController.Instance.transform.localScale;
+
         if (input.moveVector.x > 0)
-        {
-            PlayerController.Instance.transform.localScale = new Vector3(1, 1, 1);
+        {    
+            PlayerController.Instance.transform.localScale = new Vector3(1, PlayerController.Instance.transform.localScale.y, PlayerController.Instance.transform.localScale.z);
         } else if (input.moveVector.x < 0)
         {
-            PlayerController.Instance.transform.localScale = new Vector3(-1, 1, 1);
+            PlayerController.Instance.transform.localScale = new Vector3(-1, PlayerController.Instance.transform.localScale.y, PlayerController.Instance.transform.localScale.z);
         }
     }
 
     private void HandleJump()
     {
+        if (isReverseByGravity)
+        {
+            ReverseByGravity();
+            return;
+        }
+
         if (!isTouchingGround) return;
 
         if (isBlockJump)
@@ -81,5 +92,19 @@ public class PlayerMovement : MonoBehaviour
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         isTouchingGround = false;
         OnPlayerJump?.Invoke();
+    }
+
+    private void ReverseByGravity()
+    {
+        Vector3 currentScale = PlayerController.Instance.transform.localScale;
+
+        PlayerController.Instance.transform.localScale = new Vector3(currentScale.x, -currentScale.y, currentScale.z);
+        PlayerController.Instance.SetPlayerGravityScale(-PlayerController.Instance.playerRigidbody.gravityScale);
+    }
+
+    public void ResetForNextLevel()
+    {
+        PlayerController.Instance.transform.localScale = Vector3.one;
+        PlayerController.Instance.SetPlayerGravityScale(Math.Abs(PlayerController.Instance.playerRigidbody.gravityScale));
     }
 }

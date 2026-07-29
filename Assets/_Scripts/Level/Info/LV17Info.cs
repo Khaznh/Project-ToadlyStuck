@@ -1,15 +1,16 @@
 using UnityEngine;
 
-public class LV16Info : LVInfo
+public class LV17Info : LVInfo
 {
     public void OnEnable()
     {
-        PlayerController.Instance.SetPlayerGravityScale(0.2f);
+        PlayerController.Instance.playerMovement.isReverseByGravity = true;
     }
 
     public void OnDisable()
     {
-        PlayerController.Instance.SetPlayerGravityScaleToDefault();
+        PlayerController.Instance.playerMovement.isReverseByGravity = false;
+        PlayerController.Instance.playerMovement.ResetForNextLevel();
     }
 
     public void OnPlayerNextLevel(Collider2D collision, Activer activer)

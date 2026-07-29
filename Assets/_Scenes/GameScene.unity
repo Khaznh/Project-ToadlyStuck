@@ -163,7 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08f6a82aa0d86f54eb821eb6203447c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelChooseData
-  levelIndex: 16
+  levelIndex: 17
 --- !u!1 &480373943
 GameObject:
   m_ObjectHideFlags: 0
@@ -707,6 +707,7 @@ MonoBehaviour:
   - {fileID: 8889351848438632215, guid: ecc9fb64559eff34c9e80de9c5322392, type: 3}
   - {fileID: 1738014324500399414, guid: 1e498e08b5df3fe4e82184b750d691bb, type: 3}
   - {fileID: 5493842314178501349, guid: bfc08cef6b1ec8e4895f3e6482af6a72, type: 3}
+  - {fileID: 825790957173102877, guid: 2c53634e25aeb594092c33e9ca1a3b45, type: 3}
   player: {fileID: 658438172469069521, guid: 2afc8e58ca6f5f443bb83e204b2517dd, type: 3}
   currentLevelGameObject: {fileID: 0}
   lastLevelGameObject: {fileID: 0}

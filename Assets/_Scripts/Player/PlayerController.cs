@@ -30,12 +30,12 @@ public class PlayerController : Singleton<PlayerController>
         transform.position = pos;
     }
 
-    public void SetPlayerMass(float gravityScale)
+    public void SetPlayerGravityScale(float gravityScale)
     {
         playerRigidbody.gravityScale = gravityScale;
     }
 
-    public void SetPlayerMassToDefault()
+    public void SetPlayerGravityScaleToDefault()
     {
         playerRigidbody.gravityScale = 1f;
     }
