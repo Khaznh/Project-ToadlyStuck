@@ -1,8 +1,11 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public Action OnPlayerJump;
+
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 5f;
 
@@ -11,6 +14,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("LV11 stats")]
     public bool isInWind = false;
     [SerializeField] private float windForce = 2.0f;
+
+    [Header("LV15 stats")]
+    public bool isBlockJump = false;
 
     private PlayerInput input;
     private Rigidbody2D rb;
@@ -67,7 +73,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (!isTouchingGround) return;
 
+        if (isBlockJump)
+        {
+            return;
+        }
+
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         isTouchingGround = false;
+        OnPlayerJump?.Invoke();
     }
 }
