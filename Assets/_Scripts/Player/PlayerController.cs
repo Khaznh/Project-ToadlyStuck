@@ -29,4 +29,14 @@ public class PlayerController : Singleton<PlayerController>
     {
         transform.position = pos;
     }
+
+    public void SetPlayerGravityScale(float gravityScale)
+    {
+        playerRigidbody.gravityScale = gravityScale;
+    }
+
+    public void SetPlayerGravityScaleToDefault()
+    {
+        playerRigidbody.gravityScale = 1f;
+    }
 }
