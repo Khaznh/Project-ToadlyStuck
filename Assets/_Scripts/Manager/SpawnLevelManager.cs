@@ -23,12 +23,13 @@ public class SpawnLevelManager : Singleton<SpawnLevelManager>
         SpawnInit();
     }
 
-    // do not start as level 3,8,9,11,12
     private void SpawnInit()
     {
         currentLevel = LevelChooseData.Instance.levelIndex;
+        //Instantiate(player, currentLevelGameObject.GetComponent<LVInfo>().playerSpawn.position, Quaternion.identity);
+        GameObject playerIns = Instantiate(player, Vector3.zero, Quaternion.identity);
         currentLevelGameObject = Instantiate(spawnedLevels[currentLevel - 1], new Vector3(0, 0, 0), Quaternion.identity);
-        Instantiate(player, currentLevelGameObject.GetComponent<LVInfo>().playerSpawn.position, Quaternion.identity);
+        PlayerController.Instance.TelePlayer(currentLevelGameObject.GetComponent<LVInfo>().playerSpawn.position);
         currentX = 0;
     }    
 
