@@ -8,6 +8,7 @@ public class LV12Info : LVInfo
 
     private void OnEnable()
     {
+        PlayerPrefs.SetInt("LastLevelPlayed", 12);
         PlayerController.Instance.playerInput.OnClickedOnGO += PressOnDoor;
     }
 

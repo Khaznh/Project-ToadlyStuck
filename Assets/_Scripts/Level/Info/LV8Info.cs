@@ -4,6 +4,7 @@ public class LV8Info : LVInfo
 {
     private void OnEnable()
     {
+        PlayerPrefs.SetInt("LastLevelPlayed", 8);
         PlayerController.Instance.playerInput.isShambles = true;
     }
 

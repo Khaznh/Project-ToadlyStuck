@@ -9,6 +9,7 @@ public class LV9Info : LVInfo
 
     private void OnEnable()
     {
+        PlayerPrefs.SetInt("LastLevelPlayed", 9);
         PlayerController.Instance.playerInput.OnClickedPos += GetTargetPos;
         PlayerController.Instance.playerMovement.enabled = false;
     }

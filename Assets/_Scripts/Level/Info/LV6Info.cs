@@ -4,6 +4,7 @@ public class LV6Info : LVInfo
 {
     private void OnEnable()
     {
+        PlayerPrefs.SetInt("LastLevelPlayed", 6);
         doorState = DoorState.Opening;
         StartCoroutine(DoorAnimationRoutine("GateOpenning", "GateOpenIdle", DoorState.Open));
     }

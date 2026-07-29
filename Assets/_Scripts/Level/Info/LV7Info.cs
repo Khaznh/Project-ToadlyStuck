@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class LV7Info : LVInfo
 {
+    public void OnEnable()
+    {
+        PlayerPrefs.SetInt("LastLevelPlayed", 7);
+    }
+
     public void OnPlayerNextLevel(Collider2D collision, Activer activer)
     {
         if (!collision.gameObject.CompareTag("Player"))

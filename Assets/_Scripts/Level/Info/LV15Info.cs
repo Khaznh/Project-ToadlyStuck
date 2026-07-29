@@ -8,6 +8,7 @@ public class LV15Info : LVInfo
 
     private void OnEnable()
     {
+        PlayerPrefs.SetInt("LastLevelPlayed", 15);
         PlayerController.Instance.playerMovement.OnPlayerJump += RestrictJump;
     }
 

@@ -6,6 +6,11 @@ public class LV2Info : LVInfo
     
     private int timesPlayerPressButton = 0;
 
+    public void OnEnable()
+    {
+        PlayerPrefs.SetInt("LastLevelPlayed", 2);
+    }
+
     public void OnPlayerNextLevel(Collider2D collision, Activer activer)
     {
         if (!collision.gameObject.CompareTag("Player"))

@@ -4,6 +4,7 @@ public class LV17Info : LVInfo
 {
     public void OnEnable()
     {
+        PlayerPrefs.SetInt("LastLevelPlayed", 17);
         PlayerController.Instance.playerMovement.isReverseByGravity = true;
     }
 
