@@ -7728,6 +7728,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 6108803402808530290, guid: 8406faf750e49bc4392626954f2a8124, type: 3}
+      propertyPath: m_text
+      value: 7. Press harder
+      objectReference: {fileID: 0}
     - target: {fileID: 8118927440617739624, guid: 8406faf750e49bc4392626954f2a8124, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
