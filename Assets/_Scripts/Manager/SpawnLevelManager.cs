@@ -26,7 +26,6 @@ public class SpawnLevelManager : Singleton<SpawnLevelManager>
     private void SpawnInit()
     {
         currentLevel = LevelChooseData.Instance.levelIndex;
-        //Instantiate(player, currentLevelGameObject.GetComponent<LVInfo>().playerSpawn.position, Quaternion.identity);
         GameObject playerIns = Instantiate(player, Vector3.zero, Quaternion.identity);
         currentLevelGameObject = Instantiate(spawnedLevels[currentLevel - 1], new Vector3(0, 0, 0), Quaternion.identity);
         PlayerController.Instance.TelePlayer(currentLevelGameObject.GetComponent<LVInfo>().playerSpawn.position);

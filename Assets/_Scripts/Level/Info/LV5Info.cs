@@ -13,7 +13,7 @@ public class LV5Info : LVInfo
         {
             return;
         }
-
+        LevelUnlockManager.Instance.UnlockNextLevel(6);
         SpawnLevelManager.Instance.SpawnNextLevel();
     }
 
