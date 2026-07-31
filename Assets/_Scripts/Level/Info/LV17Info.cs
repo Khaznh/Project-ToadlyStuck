@@ -21,6 +21,7 @@ public class LV17Info : LVInfo
             return;
         }
 
+        LevelUnlockManager.Instance.UnlockNextLevel(18);
         SpawnLevelManager.Instance.SpawnNextLevel();
     }
 

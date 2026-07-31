@@ -20,6 +20,7 @@ public class LV8Info : LVInfo
             return;
         }
 
+        LevelUnlockManager.Instance.UnlockNextLevel(9);
         SpawnLevelManager.Instance.SpawnNextLevel();
     }
 

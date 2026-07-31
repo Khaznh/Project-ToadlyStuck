@@ -53,6 +53,7 @@ public class LV9Info : LVInfo
             return;
         }
 
+        LevelUnlockManager.Instance.UnlockNextLevel(10);
         SpawnLevelManager.Instance.SpawnNextLevel();
     }
 
