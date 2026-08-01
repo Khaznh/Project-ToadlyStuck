@@ -119,51 +119,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &346488233
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 346488234}
-  - component: {fileID: 346488235}
-  m_Layer: 0
-  m_Name: LevelChoose
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &346488234
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 346488233}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.26915, y: -0.35682, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &346488235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 346488233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08f6a82aa0d86f54eb821eb6203447c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelChooseData
-  levelIndex: 18
 --- !u!1 &480373943
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +664,8 @@ MonoBehaviour:
   - {fileID: 5493842314178501349, guid: bfc08cef6b1ec8e4895f3e6482af6a72, type: 3}
   - {fileID: 825790957173102877, guid: 2c53634e25aeb594092c33e9ca1a3b45, type: 3}
   - {fileID: 3811025148957984146, guid: 4afebd0d825e03b4cb96df0cf1217c5a, type: 3}
+  - {fileID: 7036140566053492287, guid: 0b4c8bcc84cf3a447b65a242c335daaa, type: 3}
+  - {fileID: 8611760155828903443, guid: d740b17f251f9b04f80bd78a01fc9237, type: 3}
   player: {fileID: 658438172469069521, guid: 2afc8e58ca6f5f443bb83e204b2517dd, type: 3}
   currentLevelGameObject: {fileID: 0}
   lastLevelGameObject: {fileID: 0}
@@ -725,6 +682,5 @@ SceneRoots:
   - {fileID: 751971206}
   - {fileID: 944786694}
   - {fileID: 1061182988}
-  - {fileID: 346488234}
   - {fileID: 581600878}
   - {fileID: 1063459472}

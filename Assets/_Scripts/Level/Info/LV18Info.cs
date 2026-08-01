@@ -4,7 +4,7 @@ public class LV18Info : LVInfo
 {
     public void OnEnable()
     {
-        PlayerPrefs.SetInt("LastLevelPlayed", 1);
+        PlayerPrefs.SetInt("LastLevelPlayed", 18);
     }
 
     public void OnDisable()
