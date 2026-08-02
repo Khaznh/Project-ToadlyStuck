@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
   moveVector: {x: 0, y: 0}
+  isShambles: 0
 --- !u!1 &658438172469069521
 GameObject:
   m_ObjectHideFlags: 0
@@ -381,6 +382,13 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 100
   isTouchingGround: 1
+  isInWind: 0
+  windForce: 2
+  isBlockJump: 0
+  isReverseByGravity: 0
+  curseGravity: 0
+  isHighPing: 0
+  highPingDelay: 0.5
 --- !u!61 &3346041413800994783
 BoxCollider2D:
   m_ObjectHideFlags: 0

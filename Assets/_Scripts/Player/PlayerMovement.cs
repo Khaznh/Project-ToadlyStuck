@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -6,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Action OnPlayerJump;
 
-    [SerializeField] private float moveSpeed = 5f;
+    public float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 5f;
 
     [SerializeField] private bool isTouchingGround = true;
@@ -23,6 +25,15 @@ public class PlayerMovement : MonoBehaviour
 
     [Header("LV21 stats")]
     public bool curseGravity = false;
+
+    [Header("LV23 stats")]
+    public bool isHighPing = false;
+    [SerializeField] private float highPingDelay = 1.5f;
+    private Queue<DelayInput> delayInputs = new Queue<DelayInput>();
+    private Vector2 currentDelayedMoveVector = Vector2.zero;
+
+    [Header("LV24 stats")]
+    public bool isHopHop = false;
 
     private PlayerInput input;
     private Rigidbody2D rb;
@@ -53,6 +64,19 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (isHighPing)
+        {
+            delayInputs.Enqueue(new DelayInput { moveVector = input.moveVector, delay = Time.time + highPingDelay });
+
+            while (delayInputs.Count > 0 && delayInputs.Peek().delay <= Time.time)
+            {
+                currentDelayedMoveVector = delayInputs.Dequeue().moveVector;
+            }
+
+            HandleMovement(currentDelayedMoveVector);
+            return;
+        }
+
         HandleMovement(input.moveVector);
     }
 
@@ -61,6 +85,11 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isTouchingGround = true;
+
+            if (isHopHop)
+            {
+                HandleJump();
+            }
         }
     }
 
@@ -77,7 +106,8 @@ public class PlayerMovement : MonoBehaviour
         if (!isInWind)
         {
             rb.linearVelocity = new Vector2(moveVector.x * moveSpeed, rb.linearVelocity.y);
-        } else
+        }
+        else
         {
             rb.linearVelocity = new Vector2(moveVector.x * moveSpeed - windForce, rb.linearVelocity.y);
         }
@@ -87,10 +117,25 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 currentScale = PlayerController.Instance.transform.localScale;
 
+        if (isHighPing)
+        {
+            if (currentDelayedMoveVector.x > 0)
+            {
+                PlayerController.Instance.transform.localScale = new Vector3(1, PlayerController.Instance.transform.localScale.y, PlayerController.Instance.transform.localScale.z);
+            }
+            else if (currentDelayedMoveVector.x < 0)
+            {
+                PlayerController.Instance.transform.localScale = new Vector3(-1, PlayerController.Instance.transform.localScale.y, PlayerController.Instance.transform.localScale.z);
+            }
+
+            return;
+        }
+
         if (input.moveVector.x > 0)
-        {    
+        {
             PlayerController.Instance.transform.localScale = new Vector3(1, PlayerController.Instance.transform.localScale.y, PlayerController.Instance.transform.localScale.z);
-        } else if (input.moveVector.x < 0)
+        }
+        else if (input.moveVector.x < 0)
         {
             PlayerController.Instance.transform.localScale = new Vector3(-1, PlayerController.Instance.transform.localScale.y, PlayerController.Instance.transform.localScale.z);
         }
@@ -116,9 +161,26 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+        if (isHighPing)
+        {
+            StartCoroutine(DelayedJumpCoroutine());
+            return;
+        }
+
+        ExecuteJump();
+    }
+
+    private void ExecuteJump()
+    {
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         isTouchingGround = false;
         OnPlayerJump?.Invoke();
+    }
+
+    private IEnumerator DelayedJumpCoroutine()
+    {
+        yield return new WaitForSeconds(highPingDelay);
+        ExecuteJump();
     }
 
     private void ReverseByGravity()
@@ -133,5 +195,14 @@ public class PlayerMovement : MonoBehaviour
     {
         PlayerController.Instance.transform.localScale = Vector3.one;
         PlayerController.Instance.SetPlayerGravityScale(Math.Abs(PlayerController.Instance.playerRigidbody.gravityScale));
+
+        delayInputs.Clear();
+        currentDelayedMoveVector = Vector2.zero;
     }
+}
+
+public struct DelayInput
+{
+    public Vector2 moveVector;
+    public float delay;
 }
