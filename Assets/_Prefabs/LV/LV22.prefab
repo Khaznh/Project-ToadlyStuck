@@ -94,7 +94,7 @@ MonoBehaviour:
   OnTriggerEventEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1664998972192635513}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LV21Info, Assembly-CSharp
         m_MethodName: OnPlayerNextLevel
         m_Mode: 0
@@ -5678,6 +5678,7 @@ GameObject:
   - component: {fileID: 6755245389641575014}
   - component: {fileID: 3288960621058706360}
   - component: {fileID: 8968271325058014195}
+  - component: {fileID: 6923493770273175}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -5768,6 +5769,19 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &6923493770273175
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6755068856785660519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b0a83c05ef2cb84eb479180290e8ae7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SwipeManager
+  swipeThreshold: 500
 --- !u!1 &7067933663602184541
 GameObject:
   m_ObjectHideFlags: 0
@@ -5777,7 +5791,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8849080829509108973}
-  - component: {fileID: 1664998972192635513}
+  - component: {fileID: 4336906005444481846}
   m_Layer: 0
   m_Name: LV22
   m_TagString: Untagged
@@ -5812,7 +5826,7 @@ Transform:
   - {fileID: 673078616690090015}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1664998972192635513
+--- !u!114 &4336906005444481846
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5821,12 +5835,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7067933663602184541}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62045fce05ee64f4bbce02da3f881a19, type: 3}
+  m_Script: {fileID: 11500000, guid: 47944feca8115eb489833b97827b4f63, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LV21Info
+  m_EditorClassIdentifier: Assembly-CSharp::LV22Info
   door: {fileID: 7557893808555705378}
   redButton: {fileID: 7366129954858409180}
   playerSpawn: {fileID: 503544726917279867}
+  swipeManager: {fileID: 6923493770273175}
 --- !u!1 &7366129954858409180
 GameObject:
   m_ObjectHideFlags: 0
@@ -6244,7 +6259,7 @@ MonoBehaviour:
   OnTriggerEventEnter:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1664998972192635513}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LV21Info, Assembly-CSharp
         m_MethodName: OnPlayerPressButton
         m_Mode: 0
@@ -6259,7 +6274,7 @@ MonoBehaviour:
   OnTriggerEventExit:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1664998972192635513}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: LV21Info, Assembly-CSharp
         m_MethodName: OnPlayerLeaveButton
         m_Mode: 0
@@ -6842,7 +6857,7 @@ PrefabInstance:
     - target: {fileID: 3763026155416861986, guid: c56e226a544be4c47aaeccdb240215ba, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 3763026155416861986, guid: c56e226a544be4c47aaeccdb240215ba, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -6853,7 +6868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3763026155416861986, guid: c56e226a544be4c47aaeccdb240215ba, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3763026155416861986, guid: c56e226a544be4c47aaeccdb240215ba, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -6928,7 +6943,7 @@ PrefabInstance:
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -6939,7 +6954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -7018,7 +7033,7 @@ PrefabInstance:
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7029,7 +7044,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -7140,7 +7155,7 @@ PrefabInstance:
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7151,7 +7166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -7190,7 +7205,7 @@ PrefabInstance:
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7201,7 +7216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -7280,7 +7295,7 @@ PrefabInstance:
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7291,7 +7306,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -7402,7 +7417,7 @@ PrefabInstance:
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7413,7 +7428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -7488,7 +7503,7 @@ PrefabInstance:
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7499,7 +7514,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -7574,7 +7589,7 @@ PrefabInstance:
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7585,7 +7600,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -7624,7 +7639,7 @@ PrefabInstance:
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7635,7 +7650,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -7746,7 +7761,7 @@ PrefabInstance:
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7757,7 +7772,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -7792,7 +7807,7 @@ PrefabInstance:
     - target: {fileID: -5148051098212548228, guid: df448701698c38b409943193a19dec1e, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: -5148051098212548228, guid: df448701698c38b409943193a19dec1e, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7803,7 +7818,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5148051098212548228, guid: df448701698c38b409943193a19dec1e, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: -5148051098212548228, guid: df448701698c38b409943193a19dec1e, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -7918,7 +7933,7 @@ PrefabInstance:
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7929,7 +7944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -7964,7 +7979,7 @@ PrefabInstance:
     - target: {fileID: -5148051098212548228, guid: df448701698c38b409943193a19dec1e, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: -5148051098212548228, guid: df448701698c38b409943193a19dec1e, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7975,7 +7990,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5148051098212548228, guid: df448701698c38b409943193a19dec1e, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: -5148051098212548228, guid: df448701698c38b409943193a19dec1e, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -8054,7 +8069,7 @@ PrefabInstance:
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -8065,7 +8080,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -8140,7 +8155,7 @@ PrefabInstance:
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -8151,7 +8166,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -8226,7 +8241,7 @@ PrefabInstance:
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -8237,7 +8252,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -8312,7 +8327,7 @@ PrefabInstance:
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -8323,7 +8338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -8402,7 +8417,7 @@ PrefabInstance:
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -8413,7 +8428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -8492,7 +8507,7 @@ PrefabInstance:
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -8503,7 +8518,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -8578,7 +8593,7 @@ PrefabInstance:
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -8589,7 +8604,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -8700,7 +8715,7 @@ PrefabInstance:
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -8711,7 +8726,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8071424338741364126, guid: 824360292b5f43046af97a0542e9f445, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -8749,7 +8764,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6108803402808530290, guid: 8406faf750e49bc4392626954f2a8124, type: 3}
       propertyPath: m_text
-      value: 21. Gravity fails
+      value: 22. Next photo
       objectReference: {fileID: 0}
     - target: {fileID: 8118927440617739624, guid: 8406faf750e49bc4392626954f2a8124, type: 3}
       propertyPath: m_Pivot.x
@@ -8919,7 +8934,7 @@ PrefabInstance:
     - target: {fileID: -5148051098212548228, guid: df448701698c38b409943193a19dec1e, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: -5148051098212548228, guid: df448701698c38b409943193a19dec1e, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -8930,7 +8945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5148051098212548228, guid: df448701698c38b409943193a19dec1e, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: -5148051098212548228, guid: df448701698c38b409943193a19dec1e, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -9009,7 +9024,7 @@ PrefabInstance:
     - target: {fileID: 3763026155416861986, guid: c56e226a544be4c47aaeccdb240215ba, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 3763026155416861986, guid: c56e226a544be4c47aaeccdb240215ba, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -9020,7 +9035,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3763026155416861986, guid: c56e226a544be4c47aaeccdb240215ba, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 3763026155416861986, guid: c56e226a544be4c47aaeccdb240215ba, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -9095,7 +9110,7 @@ PrefabInstance:
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -9106,7 +9121,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -9181,7 +9196,7 @@ PrefabInstance:
     - target: {fileID: -5148051098212548228, guid: df448701698c38b409943193a19dec1e, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: -5148051098212548228, guid: df448701698c38b409943193a19dec1e, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -9192,7 +9207,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5148051098212548228, guid: df448701698c38b409943193a19dec1e, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: -5148051098212548228, guid: df448701698c38b409943193a19dec1e, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -9271,7 +9286,7 @@ PrefabInstance:
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -9282,7 +9297,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
@@ -9361,7 +9376,7 @@ PrefabInstance:
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1664998972192635513}
+      objectReference: {fileID: 4336906005444481846}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -9372,7 +9387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: LV21Info, Assembly-CSharp
+      value: LV22Info, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6880207067026706344, guid: a3b71c00c22ba3949aa41bef93615dc0, type: 3}
       propertyPath: OnTriggerEventEnter.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
