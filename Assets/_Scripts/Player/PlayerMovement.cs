@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
     [Header("LV17 stats")]
     public bool isReverseByGravity = false;
 
-    [Header("LV21")]
+    [Header("LV21 stats")]
     public bool curseGravity = false;
 
     private PlayerInput input;
@@ -38,6 +38,17 @@ public class PlayerMovement : MonoBehaviour
     private void Update()
     {
         HandleFacing();
+
+        if (curseGravity)
+        {
+            if (!isTouchingGround)
+            {
+                return;
+            }
+
+            ReverseByGravity();
+            return;
+        }
     }
 
     private void FixedUpdate()
@@ -50,6 +61,14 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isTouchingGround = true;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isTouchingGround = false;
         }
     }
 
@@ -79,7 +98,10 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleJump()
     {
-
+        if (curseGravity)
+        {
+            return;
+        }
 
         if (isReverseByGravity)
         {
