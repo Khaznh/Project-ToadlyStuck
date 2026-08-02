@@ -8,6 +8,7 @@ TagManager:
   - Corpse
   - LV3Button
   - LV12Door
+  - LV27Door
   layers:
   - Default
   - TransparentFX
