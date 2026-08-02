@@ -127,6 +127,15 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Back"",
+                    ""type"": ""Button"",
+                    ""id"": ""f0f5a620-a9d2-40c0-a8f1-87d9eab9c7d6"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -237,6 +246,17 @@ public partial class @Input: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""Hold"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c04d005b-0144-483d-b0be-1ad5529bab96"",
+                    ""path"": ""*/{Back}"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Back"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -374,6 +394,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
         m_NorPlayer_Jump = m_NorPlayer.FindAction("Jump", throwIfNotFound: true);
         m_NorPlayer_Click = m_NorPlayer.FindAction("Click", throwIfNotFound: true);
         m_NorPlayer_Hold = m_NorPlayer.FindAction("Hold", throwIfNotFound: true);
+        m_NorPlayer_Back = m_NorPlayer.FindAction("Back", throwIfNotFound: true);
         // ShamblePlayer
         m_ShamblePlayer = asset.FindActionMap("ShamblePlayer", throwIfNotFound: true);
         m_ShamblePlayer_Click = m_ShamblePlayer.FindAction("Click", throwIfNotFound: true);
@@ -464,6 +485,7 @@ public partial class @Input: IInputActionCollection2, IDisposable
     private readonly InputAction m_NorPlayer_Jump;
     private readonly InputAction m_NorPlayer_Click;
     private readonly InputAction m_NorPlayer_Hold;
+    private readonly InputAction m_NorPlayer_Back;
     /// <summary>
     /// Provides access to input actions defined in input action map "NorPlayer".
     /// </summary>
@@ -491,6 +513,10 @@ public partial class @Input: IInputActionCollection2, IDisposable
         /// Provides access to the underlying input action "NorPlayer/Hold".
         /// </summary>
         public InputAction @Hold => m_Wrapper.m_NorPlayer_Hold;
+        /// <summary>
+        /// Provides access to the underlying input action "NorPlayer/Back".
+        /// </summary>
+        public InputAction @Back => m_Wrapper.m_NorPlayer_Back;
         /// <summary>
         /// Provides access to the underlying input action map instance.
         /// </summary>
@@ -529,6 +555,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @Hold.started += instance.OnHold;
             @Hold.performed += instance.OnHold;
             @Hold.canceled += instance.OnHold;
+            @Back.started += instance.OnBack;
+            @Back.performed += instance.OnBack;
+            @Back.canceled += instance.OnBack;
         }
 
         /// <summary>
@@ -552,6 +581,9 @@ public partial class @Input: IInputActionCollection2, IDisposable
             @Hold.started -= instance.OnHold;
             @Hold.performed -= instance.OnHold;
             @Hold.canceled -= instance.OnHold;
+            @Back.started -= instance.OnBack;
+            @Back.performed -= instance.OnBack;
+            @Back.canceled -= instance.OnBack;
         }
 
         /// <summary>
@@ -738,6 +770,13 @@ public partial class @Input: IInputActionCollection2, IDisposable
         /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
         /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
         void OnHold(InputAction.CallbackContext context);
+        /// <summary>
+        /// Method invoked when associated input action "Back" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+        /// </summary>
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+        /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+        void OnBack(InputAction.CallbackContext context);
     }
     /// <summary>
     /// Interface to implement callback methods for all input action callbacks associated with input actions defined by "ShamblePlayer" which allows adding and removing callbacks.

@@ -6,6 +6,7 @@ using UnityEngine.Rendering.Universal;
 public class PlayerInput : MonoBehaviour
 {
     public Action OnJumpClicked;
+    public Action OnBackClicked;
 
     public Action<GameObject> OnClickedOnGO;
     public Action<Vector2> OnClickedPos;
@@ -22,8 +23,14 @@ public class PlayerInput : MonoBehaviour
 
         playerInputAction.NorPlayer.Jump.performed += OnNorJumpPerformed;
         playerInputAction.NorPlayer.Click.performed += OnClick;
+        playerInputAction.NorPlayer.Back.performed += Back_performed;
 
         playerInputAction.ShamblePlayer.Jump.performed += OnShambleJumpPerformed;
+    }
+
+    private void Back_performed(InputAction.CallbackContext obj)
+    {
+        OnBackClicked?.Invoke();
     }
 
     private void OnDisable()
