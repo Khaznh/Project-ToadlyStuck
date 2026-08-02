@@ -8,7 +8,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public Action OnPlayerJump;
 
-    [SerializeField] private float moveSpeed = 5f;
+    public float moveSpeed = 5f;
     [SerializeField] private float jumpForce = 5f;
 
     [SerializeField] private bool isTouchingGround = true;

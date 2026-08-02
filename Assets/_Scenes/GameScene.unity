@@ -670,6 +670,7 @@ MonoBehaviour:
   - {fileID: 7067933663602184541, guid: 1d042e8164ff6a94cae23e73641faf03, type: 3}
   - {fileID: 7403769949649595401, guid: 91d1dd352d7fcc84ca5615bc340d6171, type: 3}
   - {fileID: 1524916198268437292, guid: d08e3f402b9941d448b0ebe893588603, type: 3}
+  - {fileID: 6682325391986302429, guid: 8967c8123c77b3a4192121455177468d, type: 3}
   player: {fileID: 658438172469069521, guid: 2afc8e58ca6f5f443bb83e204b2517dd, type: 3}
   currentLevelGameObject: {fileID: 0}
   lastLevelGameObject: {fileID: 0}
