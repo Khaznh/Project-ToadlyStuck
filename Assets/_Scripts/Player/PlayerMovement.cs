@@ -21,6 +21,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("LV17 stats")]
     public bool isReverseByGravity = false;
 
+    [Header("LV21")]
+    public bool curseGravity = false;
+
     private PlayerInput input;
     private Rigidbody2D rb;
 
@@ -76,6 +79,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void HandleJump()
     {
+
+
         if (isReverseByGravity)
         {
             ReverseByGravity();
