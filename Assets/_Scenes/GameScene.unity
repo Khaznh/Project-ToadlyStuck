@@ -673,6 +673,8 @@ MonoBehaviour:
   - {fileID: 6682325391986302429, guid: 8967c8123c77b3a4192121455177468d, type: 3}
   - {fileID: 6672724526211288780, guid: 5dc3804f3e80a3d488b1c9de3640e030, type: 3}
   - {fileID: 3719948046086773296, guid: 509a42e409c84fd44b82bd91540af123, type: 3}
+  - {fileID: 5276164143447609815, guid: 3685668c22c6ed449a6cd411a49b78af, type: 3}
+  - {fileID: 6054140227426711694, guid: ee8b68f21ce7be648b88e2c20cf1ad72, type: 3}
   player: {fileID: 658438172469069521, guid: 2afc8e58ca6f5f443bb83e204b2517dd, type: 3}
   currentLevelGameObject: {fileID: 0}
   lastLevelGameObject: {fileID: 0}
