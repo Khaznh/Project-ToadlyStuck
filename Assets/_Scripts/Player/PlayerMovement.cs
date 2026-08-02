@@ -32,6 +32,8 @@ public class PlayerMovement : MonoBehaviour
     private Queue<DelayInput> delayInputs = new Queue<DelayInput>();
     private Vector2 currentDelayedMoveVector = Vector2.zero;
 
+    [Header("LV24 stats")]
+    public bool isHopHop = false;
 
     private PlayerInput input;
     private Rigidbody2D rb;
@@ -83,6 +85,11 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isTouchingGround = true;
+
+            if (isHopHop)
+            {
+                HandleJump();
+            }
         }
     }
 
