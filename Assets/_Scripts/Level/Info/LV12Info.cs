@@ -54,6 +54,8 @@ public class LV12Info : LVInfo
 
         if (currentTimeKnock == timeKnockDoor)
         {
+            sfx.PlaySound(buttonClick);
+
             if (doorState == DoorState.Open || doorState == DoorState.Opening)
             {
                 return;

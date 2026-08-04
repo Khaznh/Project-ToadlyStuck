@@ -6388,6 +6388,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LV19Info
   door: {fileID: 6240655543528057369}
   redButton: {fileID: 8516320185995251009}
+  buttonClick: {fileID: 8300000, guid: b4a6b6abea7c78b40af9e9938fa389b8, type: 3}
+  doorOpen: {fileID: 8300000, guid: 130fcc84ce06b6b41833cac7cce4f02f, type: 3}
+  sfx: {fileID: 11400000, guid: cf093c1682b4c7f4e800bf266bd0c5bf, type: 2}
   playerSpawn: {fileID: 2545200913827181424}
   mainMixer: {fileID: 24100000, guid: 2f1f33d2ee36c65488d03a1dc0ec455e, type: 2}
 --- !u!1 &7157877827773658293

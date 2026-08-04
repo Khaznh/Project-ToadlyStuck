@@ -49,6 +49,8 @@ public class LV5Info : LVInfo
 
     private void PressButton(GameObject pressGO)
     {
+        sfx.PlaySound(buttonClick);
+
         if (!pressGO.gameObject.CompareTag("Corpse"))
         {
             return;

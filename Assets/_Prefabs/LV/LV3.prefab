@@ -56,6 +56,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LV3Info
   door: {fileID: 3903133639928333522}
   redButton: {fileID: 5290165793082643033}
+  buttonClick: {fileID: 8300000, guid: b4a6b6abea7c78b40af9e9938fa389b8, type: 3}
+  doorOpen: {fileID: 8300000, guid: 130fcc84ce06b6b41833cac7cce4f02f, type: 3}
+  sfx: {fileID: 11400000, guid: cf093c1682b4c7f4e800bf266bd0c5bf, type: 2}
   playerSpawn: {fileID: 2819658738842075924}
 --- !u!1 &367009420980671735
 GameObject:

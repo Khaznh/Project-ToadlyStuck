@@ -93,7 +93,7 @@ public class LV9Info : LVInfo
         {
             return;
         }
-
+        sfx.PlaySound(buttonClick);
         buttonState = ButtonState.Pressing;
         StartCoroutine(ButtonAnimationRoutine("RedButtonOpenning", "RedButtonOnIdle", ButtonState.Pressed));
 

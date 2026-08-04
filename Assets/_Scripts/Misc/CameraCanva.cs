@@ -3,6 +3,7 @@ using UnityEngine;
 public class CameraCanva : MonoBehaviour
 {
     [SerializeField] private Canvas canvas;
+    [SerializeField] private PauseCanva pauseCanva;
 
     private void OnEnable()
     {
@@ -17,11 +18,6 @@ public class CameraCanva : MonoBehaviour
 
     public void PauseGameClick()
     {
-
-    }
-
-    public void SuggestionClick()
-    {
-
+        pauseCanva.gameObject.SetActive(true);
     }
 }

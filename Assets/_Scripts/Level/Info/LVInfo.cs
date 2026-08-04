@@ -8,6 +8,11 @@ public class LVInfo : MonoBehaviour
     [SerializeField] private GameObject door;
     [SerializeField] private GameObject redButton;
 
+    [Header("Sound")]
+    [SerializeField] protected AudioClip buttonClick;
+    [SerializeField] protected AudioClip doorOpen;
+    [SerializeField] protected AudioChannelSO sfx;
+
     public Transform playerSpawn;
 
     protected DoorState doorState = DoorState.Close;
@@ -15,6 +20,7 @@ public class LVInfo : MonoBehaviour
 
     protected IEnumerator DoorAnimationRoutine(string playAnimName, string idleAnimName, DoorState finalState)
     {
+        sfx.PlaySound(doorOpen);
         Animator doorAnim = door.GetComponentInChildren<Animator>();
         doorAnim.Play(playAnimName);
         yield return null;
