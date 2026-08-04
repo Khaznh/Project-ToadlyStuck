@@ -8,6 +8,7 @@ public class LevelUnlockManager : Singleton<LevelUnlockManager>
 
     private void OnEnable()
     {
+        Application.targetFrameRate = 60;
         currentGameData = SaveManager.Instance.LoadGame();
     }
 
