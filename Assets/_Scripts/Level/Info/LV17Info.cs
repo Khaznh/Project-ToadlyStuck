@@ -52,6 +52,8 @@ public class LV17Info : LVInfo
             return;
         }
 
+        sfx.PlaySound(buttonClick);
+
         buttonState = ButtonState.Pressing;
         StartCoroutine(ButtonAnimationRoutine("RedButtonOpenning", "RedButtonOnIdle", ButtonState.Pressed));
 

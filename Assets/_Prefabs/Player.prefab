@@ -389,6 +389,7 @@ MonoBehaviour:
   curseGravity: 0
   isHighPing: 0
   highPingDelay: 0.5
+  isHopHop: 0
 --- !u!61 &3346041413800994783
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -480,3 +481,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerDeath
   playerCorpes: {fileID: 524488338303740865, guid: 3fe25634e83b50f4eb8ade53e989f9e3, type: 3}
+  ouchSound: {fileID: 8300000, guid: f7a7e1302ae89ee41b348604ce13f1b4, type: 3}
+  sfx: {fileID: 11400000, guid: cf093c1682b4c7f4e800bf266bd0c5bf, type: 2}

@@ -735,6 +735,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LV18Info
   door: {fileID: 4210314450742716027}
   redButton: {fileID: 9044344332781542423}
+  buttonClick: {fileID: 8300000, guid: b4a6b6abea7c78b40af9e9938fa389b8, type: 3}
+  doorOpen: {fileID: 8300000, guid: 130fcc84ce06b6b41833cac7cce4f02f, type: 3}
+  sfx: {fileID: 11400000, guid: cf093c1682b4c7f4e800bf266bd0c5bf, type: 2}
   playerSpawn: {fileID: 2363867666357500050}
 --- !u!1 &3852273685416884664
 GameObject:

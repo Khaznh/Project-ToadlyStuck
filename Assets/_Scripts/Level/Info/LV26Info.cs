@@ -42,6 +42,8 @@ public class LV26Info : LVInfo
 
     private void PressButton(GameObject pressGO)
     {
+        sfx.PlaySound(buttonClick);
+
         if (doorState == DoorState.Open || doorState == DoorState.Opening)
         {
             return;

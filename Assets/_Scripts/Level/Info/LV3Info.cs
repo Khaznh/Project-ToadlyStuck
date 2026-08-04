@@ -57,6 +57,7 @@ public class LV3Info : LVInfo
 
     private void PressButton(GameObject pressGO)
     {
+        sfx.PlaySound(buttonClick);
         buttonState = ButtonState.Pressing;
         StartCoroutine(ButtonAnimationRoutine("RedButtonOpenning", "RedButtonOnIdle", ButtonState.Pressed));
 
